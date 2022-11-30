@@ -17,7 +17,7 @@ const isValid = function (value) {
 
 
 const isValidEmail = function (mail) {
-  if (/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(mail)) {
+  if (/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
     return true;
   }
   return false
@@ -59,7 +59,7 @@ const isValidDate = function (date) {
 }
 
 
-const isValidISBN13 = function (ISBN) {
+const isValidISBN = function (ISBN) {
   if (/^(?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+$/.test(ISBN)) return true;
   return false
 }
@@ -68,4 +68,4 @@ const isValidISBN13 = function (ISBN) {
 
 
 
-module.exports = { isValidEmail, isValidName, isValidBody, isValidPassword, isvalidPhone, isvalidPincode,isValidDate ,isValidISBN13,isValid};
+module.exports = { isValidEmail, isValidName, isValidBody, isValidPassword, isvalidPhone, isvalidPincode,isValidDate ,isValidISBN,isValid};

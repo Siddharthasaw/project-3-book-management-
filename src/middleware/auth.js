@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const booksModel = require("../models/booksModel")
 
 
-//========================================== authentication =============================================
+//-------------------------------------------------[authentication]----------------------------------------------------------------
 
 const authentication = function (req, res, next) {
     try {
@@ -12,7 +12,7 @@ const authentication = function (req, res, next) {
             return res.status(401).send({ status: false, message: "Please provide a token" })
         }
 
-        jwt.verify(token, "humetanahibananahaii", function (err, decodedToken) {
+        jwt.verify(token, "secretKey", function (err, decodedToken) {
             if (err && err.message == "jwt expired") {
                 return res.status(401).send({ status: false, message: "Session expired! Please login again." })
             }
@@ -31,10 +31,7 @@ const authentication = function (req, res, next) {
 }
 
 
-
-
-
-//==========================   authorisation =====================================================
+//---------------------------------------------------[authorisation]-----------------------------------------------------------------------
 
 const authorisation = async function (req, res, next) {
     try {
