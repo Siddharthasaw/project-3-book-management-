@@ -135,10 +135,6 @@ const createBooks = async function (req, res) {
 
 
 
-
-
-
-
 //----------------------------------------------[geting books data using query params]----------------------------------------------
 
 const getBooks = async function (req, res) {
@@ -226,11 +222,7 @@ const getBookById = async function (req, res) {
 
 
 
-
-
-
-
-//========================================== update books =====================================================
+//-------------------------------------------------------[updateBooks]----------------------------------------------------------------
 
 const updateBooks = async function (req, res) {
     try {
@@ -299,8 +291,8 @@ const updateBooks = async function (req, res) {
 
 
 
+//---------------------------------------------------------[ delete books ]--------------------------------------------------------------------
 
-//==================================== delete books =================================================
 const deleteBooks = async function (req, res) {
     try {
         const booksId = req.params.bookId
@@ -332,4 +324,3 @@ module.exports = { createBooks, getBooks, getBookById, updateBooks, deleteBooks 
 
 
 
-//{ userId : userId, "category" : {$regex : `${category}`, $options : "i"}, "subcategory" : {$regex : `${subcategory}`,$options : "i"}

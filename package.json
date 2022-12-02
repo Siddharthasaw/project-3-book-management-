@@ -7,21 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start" : "nodemon src/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shikhamungali/Project3_BookManagement.git"
-  },
-  "author": "\"Shikha Mungali,Nirdosh,Prachi Pradip Rakhonde,Dev Sharma\"",
+
+  "author": "Pratiksha, Siddhartha",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shikhamungali/Project3_BookManagement/issues"
-  },
-  "homepage": "https://github.com/shikhamungali/Project3_BookManagement#readme",
+
   "dependencies": {
-    "express": "^4.18.1",
+    "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.4",
-    "mongoose": "^6.6.1",
-    "nodemon": "^2.0.20"
+    "mongoose": "^6.7.4",
+    "nodemon": "^2.0.20",
+    "validation": "^0.0.1"
   }
 }

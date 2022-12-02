@@ -106,10 +106,11 @@ const userLogin = async function (req, res) {
 
         
         let token = jwt.sign({ userId: findUser._id }, "secretKey", { expiresIn: '24h' })
-        let decode = jwt.decode(token, "secretKey")
+        
+
  
 
-        res.status(201).send({ status: true, message: "User logged in Successfully", data: token })
+        res.status(201).send({ status: true, message: "User logged in Successfully", data: { token: token } })
     }
 
     catch (err) {
