@@ -59,7 +59,7 @@ const createBooks = async function (req, res) {
         };
 
        
-        if (!mongoose.Types.ObjectId.isValid(userId)) {
+        if (!mongoose.isValidObjectId(userId)) {
             return res.status(400).send({ status: false, msg: "invalid userId format" });
         }
 
@@ -197,10 +197,10 @@ const getBookById = async function (req, res) {
     try {
         const bookid = req.params.bookId
         
-        if (!mongoose.Types.ObjectId.isValid(bookid)) {
+        if (!mongoose.isValidObjectId(bookid)) {
             return res.status(400).send({ status: false, message: "Invalid Book Id" })
         }
-        const book = await booksModel.findOne({ _id: bookid, isDeleted: false }).lean()
+        const book = await booksModel.findOne({ _id: bookid, isDeleted: false })
        
         if (!book) {
             return res.status(404).send({ status: false, message: "Sorry! No book found Or Book may be deleted" })

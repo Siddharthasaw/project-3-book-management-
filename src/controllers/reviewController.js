@@ -14,7 +14,7 @@ const createReview = async function (req, res) {
         data.bookId = bookId
         const { review, rating, reviewedBy } = data
         
-        if (!mongoose.Types.ObjectId.isValid(bookId)) {
+        if (!mongoose.isValidObjectId(bookId)) {
             return res.status(400).send({ status: false, message: "Invalid Book Id" })
         }
         
